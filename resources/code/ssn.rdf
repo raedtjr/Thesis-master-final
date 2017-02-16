@@ -1,0 +1,9 @@
+: system-0 a ssn:System ;
+	ssn:hasSubsystem [
+	a ssn:Sensor ;
+	ssn:observes :Temperature .
+	] ;
+	ssn:hasSubsystem [
+	a ssn:Sensor
+	ssn:observes: Pressure .
+	] ;

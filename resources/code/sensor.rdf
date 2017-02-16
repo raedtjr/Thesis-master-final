@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ns1="http://purl.oclc.org/NET/ssnx/ssn#"
+   xmlns:ns2="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="AirTemperatureSensor_resource">
+    <ns2:isSubSystemOf rdf:resource="device_resource"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+    <ns1:madeObservation rdf:resource="Observation_resource"/>
+    <ns1:hasUnit rdf:resource="http://purl.org/iot/vocab/m3-lite#Cel"/>
+    <ns4:hasQuantityKind rdf:resource="http://purl.org/iot/vocab/m3-lite#AirTemperature"/>
+  </rdf:Description>
+  </rdf:Description>
+</rdf:RDF>

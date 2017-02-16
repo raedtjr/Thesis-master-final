@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ns1="http://purl.oclc.org/NET/ssnx/qu/unit#"
+   xmlns:ns2="http://purl.oclc.org/NET/ssnx/ssn#"
+   xmlns:ns3="http://www.loa-cnr.it/ontologies/DUL.owl#"
+   xmlns:ns4="http://purl.org/iot/vocab/m3-lite#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="ObservationValue_resource">
+    <ns3:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">xsd:double</ns3:hasDataValue>
+    <ns1:hasUnit rdf:resource="http://purl.org/iot/vocab/m3-lite#Cel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="Observation_resource">
+    <ns2:observationResult rdf:resource="SensorOutput_resource"/>
+    <ns2:observationSamplingTime rdf:resource="timestamp_resource"/>
+    <ns2:observedBy rdf:resource="AirTemperature_resource"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="timestamp_resource">
+    <ns3:hasIntervalDate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">Time:inXSDDateTime</ns3:hasIntervalDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="SensorOutput_resource">
+    <ns2:hasValue rdf:resource="ObservationValue_resource"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="Observation_resource">
+    <ns4:hasQuantityKind rdf:resource="http://purl.org/iot/vocab/m3-lite#AirTemperature"/>
+  </rdf:Description>
+</rdf:RDF>

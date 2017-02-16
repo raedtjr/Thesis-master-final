@@ -1,0 +1,87 @@
+\cleardoublepage
+\chapter{Requirement Analysis}\label{sec:reqs}\minitoc\vspace{.5cm}
+\index{Requirements}
+
+\section{Introduction}
+
+The previous chapter presented an overview of state of the art in the field of semantic interoperability in the Internet of things with a focus on providing an M2M system with the semantic capabilities to overcome the interoperability issue. Based on this overview and in order to elaborate on the research issues in the dissertation, this chapter identifies the requirements for the implementation of the Semantic annotation extension which aims to provide a given M2M or IoT system with the semantic capabilities. \par 
+All requirements can be separated into functional and non-functional[add roben reference].The former are concerned about the actual scope of operation, whereas the latter mainly focus on how the system should behave and perform.
+
+\section{Functional Requirements}
+The following functional requirements specify the essential functions of the Semantic Annotation Extension designed and implemented within this work. Those requirements are primarily categorized according to fundamental semantic aspects which are listed herein in sort of their relativity to the thesis objectives. 
+
+\subsection{Semantics Annotation}
+As it was discussed in the previous chapter, the main objective of this work is to provide interoperability between things in an M2M system. Those things can be presented as sensors, actuator or devices that communicate with the platform using a various set of technologies. Furthermore, in an M2M system complying with the oneM2M specification, those things are mapped to a oneM2M hierarchical resource tree. In this manner, each resource has a representation that can be transferred and manipulated with CRUD methods such as Create, Retrieve Update and Delete. \par 
+From this perspective, the Semantic Annotation Extension shall provide capabilities to a given M2M system to manage semantic information about the oneM2M resources by adding and representing the semantic of those resources that shall be made available in a given M2M System for advanced semantic operation such as Semantic Query or semantic discovery of the resources. Thus, the Semantic Annotation Extension shall support a common language for semantic description such as RDF. 
+
+\subsection{Ontology Specification}
+Ontologies play a central role in enriching data with a conceptual semantics. From this perspective, the Semantic Annotation uses ontologies to index the content of the M2M resources which can result in the representation of explicit knowledge. In the other hand, as it was presented in the State of the art, the number of ontologies that are being built and already in use is growing fast. \par 
+Moreover, not all the ontologies available can be used to annotate the resources' content. From this point of view, The following list of Ontology requirements should be fulfilled in order to provide an efficient Semantic Annotation:
+\begin{itemize}
+\item In order to semantically annotate M2M resources, the system shall use an ontology for IoT that represents a variety of specific concepts.
+\item As it was previously presented the number of ontology already in use or being built is growing[], hence each stakeholder may use a specific independent ontology leading to a deepening of the interoperability problem. Therefore the semantic annotation extension shall provide the possibility to annotate data and information using a different set of ontologies and not to rely only on one ontology.
+\item Based on the second requirement description, the system shall provide the possibility to annotate the resources' content using more than one ontology simultaneously and the possibility to add or remove and ontology annotation as needed.
+\item The Semantic Annotation Extension shall provide means to extend ontologies in the M2M system.
+\item The Semantic Annotation Extension shall be able to support updating, managing and discovering ontologies within an M2M system.
+\end{itemize}
+
+\subsection{Semantic Repository}
+
+The Semantic Annotation extension needs to provide a centralized location particularly for semantics to a given M2M system such as a Semantic Repository. The Semantic Repository shall contain all the information extracted from the resource semantics instances. Thus, Information stored in the Semantic Repository are then available via an SPARQL endpoint.
+
+\subsection{Semantics Query}
+The Semantic Annotation Extension shall enrich a given M2M system with the capabilities to discover M2M resources using semantic descriptions. Thus, the applications and users can perform a semantic operation on the M2M resources.
+
+\section{Non-Functional Requirement}
+As it was presented in the introduction of this chapter, The non-functional requirements listed below, elaborate a performance characteristic of the system. They are not as many, yet they are critical as well.
+\subsection{Semantic Interoperability}
+Semantic interoperability is a key indicator of this work. Thus, based on the knowledge gained from the previous chapter, the interoperability is the main aim of this thesis which would provide interoperability between heterogeneous devices and services in a given M2M system compliance with the oneM2M standards.
+\subsection{Modularity}
+Modularity can be categorized as a practical application of the principle of "Separation of Concerns"~\cite{mo}. It basically means that a complex system is divided into simpler and more manageable modules. Each module includes a set of small and basic functions dedicated for a set of specific task. \par
+Modular programming is typically useful for program readability and re-usability~\cite{mo}. Thus, it is important in this dissertation because it offers the possibilities to divide the Semantic Extension Implementation into a set of modules where each module is responsible for a particular task. In this manner, it is more advantageous to update the Ontology implemented or extend it by just updating or modifying the module in charge of the ontology. Also, this requirement may facilitate the integration of the semantic Extension within a given M2M system.
+\subsection{Usability}
+In this context usability refers to the adaptation of the M2M platform's users (e.g. Application, developers) to the Semantic annotation usage. Hence, it should be easy enough for the user to perform and execute semantic operation within a given M2M system such as SPARQL Query operation or resource discovery based on Semantic description.\par  
+Moreover, the users shall be able to choose more than one ontology for data and information annotation in a flexible and simultaneous manner.
+\subsection{Performance}
+ Performance measurements provide key indicators to estimate the quality of a developed solution. They are used mainly to quantify specific characteristics of a system. In this context, the performance of the oneM2M extension should be reflected in reasonable times for carrying out Semantic Operations, the potential for scalability and the quality of the data and information annotated simultaneously using a set of ontologies.
+ \subsection{Security}
+ Since that the use of semantic provide additional methods to the M2M users and applications for advanced discovery requests based on semantic such as an SPARQL Endpoint, the oneM2M security solutions should be enhanced. This can be done by rebuilding the authorization mechanism. Although this requirement is of a recognizing importance, it is not in the scope of this thesis. 
+
+\section{Conclusion}
+
+The functional and non-functional requirements for the design and implementation of a Semantic Annotation Extension in a given M2M system are presented within this chapter. Some of those requirements is already defined in oneM2M TS-0002~\cite{02} and adapted to this work. In the given table~\ref{f}, The functional as well as non-functional requirements are prioritized according to their importance for a working working prototype of the Semantic Annotation Extension.
+
+\begin{table}[htbp]
+\centering
+\caption{Prioritization of functional requirements}
+\label{f}
+\begin{tabular}{*{14}lll}
+\hline
+\multicolumn{1}{}{\textbf{Requirement}} & \multicolumn{1}{}{\textbf{Priority}} & \multicolumn{1}{}{\textbf{}} \\ \hline
+Semantics Annotation                      & major                          &                                \\\hline
+Ontology Specification                    & major                                   &                                \\\hline
+Semantic Repository                       & major                                   &                                \\\hline
+Semantic Query                            & minor                                   &                               
+\end{tabular}
+\end{table}
+
+As presented in table~\ref{f}, there are two possibilities to prioritizes a requirement. Either by using \textit{major} which means that the requirement is critical for the implementation  or by using \textit{minor} which mean that the specified requirement is of relevant but not essential for the implementation.\par 
+
+The methodologies used to specify, which requirement should be marked as \textit{major} and which not, can be understood as follow: all requirements that are mandatory for semantically annotate the information and targeted data should be marked as \textit{major}, in the other hand the requirements that does not affect the functions for the integration are seen as complementary. Thus the latter are marked as \textit{minor}. \par 
+
+The same process is elaborated with the non-functional requirement which is illustrated in table~\ref{f2}. \par 
+\begin{table}[H]
+\centering
+\caption{Prioritization of non-functional requirements}
+\label{f2}
+\begin{tabular}{*{14}lll}
+\hline
+\multicolumn{1}{}{\textbf{Requirement}} & \multicolumn{1}{}{\textbf{Priority}} & \multicolumn{1}{}{\textbf{}} \\ \hline
+Semantic Interoperability                 & major                                 &                                \\\hline
+Modularity                                & major                                   &                                \\\hline
+Usability                                 & major                                   &                                \\\hline
+Performance                               & major                                   &                                \\\hline
+Security                                  & out of scope                            &                               
+\end{tabular}
+\end{table}
+There is a new prioritization term used within the table~\ref{f2}. Out of scope means that the specific requirement is not in the scope of the thesis. Thus, as it was discussed in this chapter the security requirement is left out of the thesis objectives.

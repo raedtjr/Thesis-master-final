@@ -1,0 +1,33 @@
+
+@prefix fiesta-iot-srd-href: <http://platform.fiesta-iot.eu/srd/registry/poc/> .
+@prefix fiesta-res: <http://platform.fiesta-iot.eu/srd/registry/poc/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix ex: <http://example.org/#> .
+@prefix iot-lite: <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> .
+@prefix m3-lite: <http://purl.org/iot/vocab/m3-lite#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Testbed a ssn:Deployment .
+
+fiesta-iot-srd-href:Device_name a ssn:Device ;
+    ssn:hasDeployment fiesta-res:Testbed ;
+    ssn:hasSubSystem ssn:AirTemperatureSensor,
+        ssn:AtmosphericPressureSensor,
+        ssn:HumiditySensor,
+       ssn:IlluminanceSensor;
+    ssn:onPlatform ex:Platform.
+
+ex:Platform a ssn:Platform ;
+    geo:location ex:Geo_location.
+
+ssn:AirTemperatureSensor a m3-lite:AirTemperature .
+
+ ssn:AtmosphericPressureSensor a m3-lite:AtmosphericPressure .
+
+ssn:HumiditySensor a m3-lite:Humidity .
+
+ssn:IlluminanceSensor a m3-lite:Illuminance .
